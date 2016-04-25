@@ -13,11 +13,11 @@ listaEnlazada::listaEnlazada() {
 	temporal = NULL;
 }
 
-void listaEnlazada::a�adirNodo(int a�adirDato) {
+void listaEnlazada::añadirNodo(int añadirDato) {
 
 	nodePtr n = new node; //crea nodo
 	n->siguiente = NULL;
-	n->data = a�adirDato;
+	n->data = añadirDato;
 
 	if (inicio != NULL) {
 		actual = inicio;
@@ -48,6 +48,36 @@ void listaEnlazada::eliminarNodo(int eliminarDato) {
 	else {
 		delPtr = actual;
 		actual = actual->siguiente;
+		//Para 	actual = adelante, temporal = siguiente, delPtr = el proceso
+		
+		/*if(actual-> estado == false){
+			actual->unidadDeMemoria = delPtr->unidadDeMemoria;
+			actual->tamañoMemoria += delPtr->tamañoMemoria;
+			actual->tamañoProceso += delPtr -> tamañoProceso;
+			temporal->siguiente = actual;
+			delete delPtr;
+		}
+		*/
+		
+		/*if(temporal-> estado == false){
+			temporal->tamañoMemoria += delPtr->tamañoMemoria;
+			temporal->tamañoProceso += delPtr ->tamañoProceso;
+			temporal-> siguiente = actual;
+			delete delPtr;
+		}*/
+		
+		/*if(actual->estado == false && actual->estado ==false){
+			temporal->tamañoMemoria += delPtr->tamañoMemoria;
+			temporal->tamañoMemoria += actual->tamañoMemoria;
+			temporal->tamañoProceso += delPtr ->tamañoProceso;
+			temporal->tamañoProceso += actual->tamañoProceso;
+			delete delPtr;
+			delPtr = actual;
+			actual = actual->siguiente;
+			temporal-> siguiente = actual; //junta nodos;
+		}*/
+		
+		
 		temporal->siguiente = actual; //conecta la lista
 		if (delPtr == inicio)
 		{
